@@ -112,6 +112,13 @@ const Projects = () => {
                 {/* Links */}
                 <div className="flex flex-col space-y-3 mt-4 md:space-y-0 md:space-x-4 md:flex-row">
                   <a
+                    href={project.links.live}
+                    target="_blank"
+                    className="w-full md:w-auto text-xs flex justify-center items-center gap-2 px-4 py-2 bg-green-700 text-white rounded-lg hover:bg-green-800 font-semibold"
+                  >
+                    View Live <FaArrowUpRightFromSquare />
+                  </a>
+                  <a
                     href={project.links.github}
                     target="_blank"
                     className="w-full md:w-auto text-xs flex justify-center items-center gap-2 px-4 py-2 bg-red-700 text-white rounded-lg hover:bg-red-800 font-semibold"
