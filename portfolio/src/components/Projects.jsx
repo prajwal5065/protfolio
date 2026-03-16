@@ -34,7 +34,16 @@ const projects = [
       github: " https://lnkd.in/dDwbfziJ",
     },
   },
-  
+  {
+    image: "/recommendation.webp",
+    title: "Recommendation System",
+    description:
+      "A recommendation system built using Python and machine learning algorithms. It provides personalized recommendations based on user preferences and behavior. The system is deployed as an interactive app on Hugging Face Spaces.",
+    links: {
+      live: "https://movierecommendation-phi.vercel.app/",
+      github: "https://github.com/prajwal5065/Movie-recommendation/tree/main",
+    },
+  },
 ];
 
 const Projects = () => {
