@@ -57,6 +57,19 @@ const projects = [
     },
   },
   {
+    image: "/my-medical-assistance.png",
+    title: "Medical AI Assistant",
+    description:
+      "An AI-powered medical query assistant built using Python and Hugging Face NLP models. It provides helpful preliminary medical guidance by understanding user questions and generating accurate, context-aware responses. The system is deployed as an interactive app on Hugging Face Spaces.",
+    techStack: ["Python", "Hugging Face", "NLP"],
+    badge: "AI Assistant",
+    category: "AI & ML",
+    links: {
+      live: "https://lnkd.in/di6SxFuY",
+      github: " https://lnkd.in/dDwbfziJ",
+    },
+  },
+  {
     image: "/internship-matcher.png",
     title: "Smart Internship Matcher",
     description:
@@ -81,19 +94,6 @@ const projects = [
     links: {
       live: "https://www.linkedin.com/feed/update/urn:li:activity:7389705475203796992/",
       github: "https://github.com/prajwal5065/Spam-Detector",
-    },
-  },
-  {
-    image: "/my-medical-assistance.png",
-    title: "Medical AI Assistant",
-    description:
-      "An AI-powered medical query assistant built using Python and Hugging Face NLP models. It provides helpful preliminary medical guidance by understanding user questions and generating accurate, context-aware responses. The system is deployed as an interactive app on Hugging Face Spaces.",
-    techStack: ["Python", "Hugging Face", "NLP"],
-    badge: "AI Assistant",
-    category: "AI & ML",
-    links: {
-      live: "https://lnkd.in/di6SxFuY",
-      github: " https://lnkd.in/dDwbfziJ",
     },
   },
   {
