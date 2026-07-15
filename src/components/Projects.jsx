@@ -5,46 +5,6 @@ import { GoRepo } from "react-icons/go";
 
 const projects = [
   {
-    image: "/internship-matcher.png",
-    title: "Smart Internship Matcher",
-    description:
-      "A TypeScript-based smart matching system that connects students with relevant internship opportunities. It uses intelligent filtering and matching logic to recommend the best-fit internships and helps automate the student–employer selection process.",
-    techStack: ["TypeScript", "React", "Node.js"],
-    badge: "Full Stack App",
-    category: "Full Stack",
-    links: {
-      live: "https://smart-internship-matcher.vercel.app/",
-      github: "https://github.com/prajwal5065/smart-internship-matcher",
-      server: "https://github.com/prajwal5065/smart-internship-matcher",
-    },
-  },
-  {
-    image: "/spam detector.jpg",
-    title: "Spam Detector AI",
-    description:
-      "A machine-learning powered text classifier built using JavaScript, NLP techniques, and custom preprocessing to distinguish spam messages from legitimate ones in real time. It provides fast predictions with a simple, user-friendly interface.",
-    techStack: ["JavaScript", "NLP", "Machine Learning"],
-    badge: "AI Model",
-    category: "AI & ML",
-    links: {
-      live: "https://www.linkedin.com/feed/update/urn:li:activity:7389705475203796992/",
-      github: "https://github.com/prajwal5065/Spam-Detector",
-    },
-  },
-  {
-    image: "/my-medical-assistance.png",
-    title: "Medical AI Assistant",
-    description:
-      "An AI-powered medical query assistant built using Python and Hugging Face NLP models. It provides helpful preliminary medical guidance by understanding user questions and generating accurate, context-aware responses. The system is deployed as an interactive app on Hugging Face Spaces.",
-    techStack: ["Python", "Hugging Face", "NLP"],
-    badge: "AI Assistant",
-    category: "AI & ML",
-    links: {
-      live: "https://lnkd.in/di6SxFuY",
-      github: " https://lnkd.in/dDwbfziJ",
-    },
-  },
-  {
     image: "/map_project.png",
     title: "MAP — Multi-Agent AI Automation Platform",
     description:
@@ -53,7 +13,7 @@ const projects = [
     badge: "Backend Project",
     category: "AI & ML",
     links: {
-      live: "https://lnkd.in/g8sCCVYn",
+      live: "https://map-eight-blond.vercel.app/",
       github: "https://github.com/Yad4o/MAP",
     },
   },
@@ -94,6 +54,46 @@ const projects = [
     links: {
       live: "https://lnkd.in/gk7Bf6cb",
       github: "https://github.com/prajwal5065/Persona-Twin",
+    },
+  },
+  {
+    image: "/internship-matcher.png",
+    title: "Smart Internship Matcher",
+    description:
+      "A TypeScript-based smart matching system that connects students with relevant internship opportunities. It uses intelligent filtering and matching logic to recommend the best-fit internships and helps automate the student–employer selection process.",
+    techStack: ["TypeScript", "React", "Node.js"],
+    badge: "Full Stack App",
+    category: "Full Stack",
+    links: {
+      live: "https://smart-internship-matcher.vercel.app/",
+      github: "https://github.com/prajwal5065/smart-internship-matcher",
+      server: "https://github.com/prajwal5065/smart-internship-matcher",
+    },
+  },
+  {
+    image: "/spam detector.jpg",
+    title: "Spam Detector AI",
+    description:
+      "A machine-learning powered text classifier built using JavaScript, NLP techniques, and custom preprocessing to distinguish spam messages from legitimate ones in real time. It provides fast predictions with a simple, user-friendly interface.",
+    techStack: ["JavaScript", "NLP", "Machine Learning"],
+    badge: "AI Model",
+    category: "AI & ML",
+    links: {
+      live: "https://www.linkedin.com/feed/update/urn:li:activity:7389705475203796992/",
+      github: "https://github.com/prajwal5065/Spam-Detector",
+    },
+  },
+  {
+    image: "/my-medical-assistance.png",
+    title: "Medical AI Assistant",
+    description:
+      "An AI-powered medical query assistant built using Python and Hugging Face NLP models. It provides helpful preliminary medical guidance by understanding user questions and generating accurate, context-aware responses. The system is deployed as an interactive app on Hugging Face Spaces.",
+    techStack: ["Python", "Hugging Face", "NLP"],
+    badge: "AI Assistant",
+    category: "AI & ML",
+    links: {
+      live: "https://lnkd.in/di6SxFuY",
+      github: " https://lnkd.in/dDwbfziJ",
     },
   },
   {
