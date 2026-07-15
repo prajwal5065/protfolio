@@ -9,8 +9,6 @@ const Navbar = ({ theme, toggleTheme }) => {
 
     // State for dropdown menu
     const [isOpen, setIsOpen] = useState(false);
-    // State for theme dropdown menu
-    const [dropdownOpen, setDropdownOpen] = useState(false);
 
     // Define navbar background based on the route
     const navbarBg = location.pathname === "/"
@@ -20,6 +18,7 @@ const Navbar = ({ theme, toggleTheme }) => {
     const navLinks = [
         { path: "/", label: "Home" },
         { path: "/about", label: "About" },
+        { path: "/experience", label: "Experience" },
         { path: "/skills", label: "Skills" },
         { path: "/projects", label: "Projects" },
         { path: "/contact", label: "Contact" },
@@ -59,10 +58,10 @@ const Navbar = ({ theme, toggleTheme }) => {
                         <FaDownload className="ml-2 h-5" />
                     </div>
 
-                    {/* Theme Dropdown */}
+                    {/* Theme Toggle */}
                     <div className="relative transition-transform duration-200 hover:-translate-y-1 hover:scale-105 hover:bg-black hover:bg-opacity-50 border border-white rounded-md">
                         <button
-                            onClick={() => setDropdownOpen(!dropdownOpen)}
+                            onClick={toggleTheme}
                             className="p-2 rounded-lg"
                         >
                             {theme === "dark" ? (
@@ -71,37 +70,6 @@ const Navbar = ({ theme, toggleTheme }) => {
                                 <FaMoon size={24} className="text-gray-300" />
                             )}
                         </button>
-
-                        {/* Theme Dropdown Menu */}
-                        <AnimatePresence>
-                            {dropdownOpen && (
-                                <motion.div
-                                    initial={{ opacity: 0, y: -10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -10 }}
-                                    className="absolute right-0 mt-2 w-36 bg-white dark:bg-black shadow-sm shadow-black dark:shadow-white rounded-md overflow-hidden"
-                                >
-                                    <button
-                                        onClick={() => {
-                                            if (theme !== "light") toggleTheme();
-                                            setDropdownOpen(false);
-                                        }}
-                                        className="flex items-center w-full px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
-                                    >
-                                        <FaSun className="mr-2" /> Light Mode
-                                    </button>
-                                    <button
-                                        onClick={() => {
-                                            if (theme !== "dark") toggleTheme();
-                                            setDropdownOpen(false);
-                                        }}
-                                        className="flex items-center w-full px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
-                                    >
-                                        <FaMoon className="mr-2" /> Dark Mode
-                                    </button>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
                     </div>
                 </div>
                 {/* Hamburger Menu */}

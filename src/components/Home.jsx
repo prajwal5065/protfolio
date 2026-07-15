@@ -21,14 +21,6 @@ const Home = ({ theme }) => {
                 <h1 className="text-8xl lg:text-[10rem] font-bold text-white tracking-tight mt-2">
                     <span className='text-black dark:text-red-700'>Pra</span>jwal
                 </h1>
-                
-                {/* Quick-Stat Strip */}
-                <div className="mt-6 flex flex-wrap justify-center md:justify-start gap-3 text-sm md:text-base text-gray-800 dark:text-gray-300 font-semibold px-4 md:px-0">
-                    <span className="bg-gray-200 dark:bg-gray-800 px-3 py-1 rounded-full">8+ Projects</span>
-                    <span className="bg-gray-200 dark:bg-gray-800 px-3 py-1 rounded-full">4th Year Student</span>
-                    <span className="bg-gray-200 dark:bg-gray-800 px-3 py-1 rounded-full">AI & Data Science</span>
-                </div>
-
                 <p className="mt-8 lg:text-xl px-8 md:p-0 text-gray-800 dark:text-white max-w-2xl">
                     An AI & Data Science engineer building smart, impactful, and scalable machine learning solutions.
                 </p>

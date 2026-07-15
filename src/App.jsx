@@ -26,11 +26,12 @@ const About = lazy(() => import('./components/About'));
 const Projects = lazy(() => import('./components/Projects'));
 const Contact = lazy(() => import('./components/Contact'));
 const Skill = lazy(() => import('./components/Skill'));
+const Experience = lazy(() => import('./components/Experience'));
 
 function App() {
   const path = useLocation();
 
-  const knownPaths = ["/", "/about", "/skills", "/projects", "/contact"];
+  const knownPaths = ["/", "/about", "/experience", "/skills", "/projects", "/contact"];
 
   const hideLayout = !knownPaths.includes(location.pathname);
 
@@ -45,6 +46,7 @@ function App() {
             <Routes location={path} key={path.pathname}>
               <Route path="/" element={<PageWrapper><Home theme={theme}/></PageWrapper>} />
               <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
+              <Route path="/experience" element={<PageWrapper><Experience /></PageWrapper>} />
               <Route path="/skills" element={<PageWrapper><Skill /></PageWrapper>} />
               <Route path="/projects" element={<PageWrapper><Projects /></PageWrapper>} />
               <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
