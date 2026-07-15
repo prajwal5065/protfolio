@@ -29,9 +29,8 @@ const Navbar = ({ theme, toggleTheme }) => {
         <nav className={`${navbarBg} shadow-lg shadow-red-400 dark:shadow-gray-400 fixed w-full top-0 z-50 `}>
             <div className="container mx-auto px-6 py-4 flex justify-between items-center">
                 {/* Logo */}
-                <Link to="/" className="text-xl font-bold text-white transition-transform duration-200 hover:scale-105">
-                    <img className="w-10 h-10" src={logo} alt="" />
-
+                <Link to="/" className="text-2xl font-black text-white tracking-tighter transition-transform duration-200 hover:scale-105">
+                    Prajwal<span className="text-gray-300">.</span>
                 </Link>
 
                 {/* Desktop Navigation */}
