@@ -1,31 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const About = () => {
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
 
-  const handleMouseMove = (e) => {
-    const { left, top } = e.target.getBoundingClientRect();
-    const x = e.clientX - left;
-    const y = e.clientY - top;
-
-    setCursorPosition({ x, y });
-  };
-
-  const handleMouseEnter = () => {
-    setIsHovering(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovering(false);
-  };
 
   return (
-    <section className="container mx-auto px-6 lg:flex lg:justify-between gap-5 lg:items-center lg:mt-40 lg:mb-20">
+    <section className="container mx-auto px-6 flex flex-col justify-center items-center lg:mt-40 lg:mb-20">
       {/* About */}
-      <div className="max-w-3xl py-52 text-center lg:text-left ">
+      <div className="max-w-3xl py-52 text-center">
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -35,21 +18,7 @@ const About = () => {
         >
           About Me
         </motion.h2>
-        {/* Image container for mobile*/}
-        <div className="mt-10 mx-auto w-3/5 md:hidden">
-          <div className="relative">
-            {/* image */}
-            <motion.img
-              initial={{ opacity: 0, y: 0 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.5 }}
-              viewport={{ once: true }}
-              src="C:\Users\Admin\Desktop\Prajwal-profolio\my-portfolio\public\my-picture.png"
-              alt="My picture"
-              className="rounded-lg w-full"
-            />
-          </div>
-        </div>
+
         <motion.p
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -67,7 +36,7 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-8 flex justify-center lg:justify-start space-x-4"
+          className="mt-8 flex justify-center space-x-4"
         >
           <Link
             to="/projects"
@@ -83,42 +52,7 @@ const About = () => {
           </Link>
         </motion.div>
       </div >
-      {/* Image container for desktop */}
-      <div
-        className="hidden md:block w-2/5 "
-        onMouseMove={handleMouseMove}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        <div className="relative">
-          {/* image */}
-          <motion.img
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: true }}
-            src="my-picture.png"
-            alt="coding"
-            className="rounded-lg w-full"
-          />
 
-          {/* Invert Mask */}
-          {isHovering && (
-            <div
-              className="absolute pointer-events-none"
-              style={{
-                left: `${cursorPosition.x - 75}px`,
-                top: `${cursorPosition.y - 75}px`,
-                width: '200px',
-                height: '200px',
-                borderRadius: '50%',
-                background: 'white',
-                mixBlendMode: 'hue',
-              }}
-            />
-          )}
-        </div>
-      </div>
     </section >
   );
 };
