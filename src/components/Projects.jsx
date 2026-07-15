@@ -53,7 +53,7 @@ const projects = [
     badge: "Backend Project",
     category: "AI & ML",
     links: {
-      live: "https://github.com/Yad4o/MAP",
+      live: "https://lnkd.in/g8sCCVYn",
       github: "https://github.com/Yad4o/MAP",
     },
   },
@@ -92,7 +92,7 @@ const projects = [
     badge: "AI Model",
     category: "AI & ML",
     links: {
-      live: "https://github.com/prajwal5065/Persona-Twin",
+      live: "https://lnkd.in/gk7Bf6cb",
       github: "https://github.com/prajwal5065/Persona-Twin",
     },
   },
