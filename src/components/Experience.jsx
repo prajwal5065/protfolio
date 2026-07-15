@@ -8,7 +8,7 @@ const experiences = [
     company: "OxiQ AI",
     companyDescription: "[Optional: A brief description of OxiQ AI]",
     role: "Gen AI Intern",
-    duration: "[Start Month] – [End Month 202X]",
+    duration: "June 1, 2024 – August 31, 2024",
     type: "[Remote / On-site]",
     summary: "Worked as a developer on a production-grade multi-agent AI system — a B2B lead-generation pipeline coordinating multiple agents through data collection, enrichment, validation, and scoring stages.",
     responsibilities: [
