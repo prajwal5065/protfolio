@@ -17,19 +17,37 @@ const Home = ({ theme }) => {
                 transition={{ duration: 1 }}
                 className="text-center md:text-left"
             >
-                <h1 className='text-2xl lg:text-4xl text-white'>Hello There!, I'm-</h1>
-                <h1 className="text-8xl lg:text-[12rem] font-bold text-white">
-                    <i><span className='text-black  dark:text-red-700'>Pra</span>jwal</i>
+                <h1 className='text-2xl lg:text-4xl text-white font-medium'>Hi, I'm</h1>
+                <h1 className="text-8xl lg:text-[10rem] font-bold text-white tracking-tight mt-2">
+                    <span className='text-black dark:text-red-700'>Pra</span>jwal
                 </h1>
-                <p className="mt-10 lg:text-xl px-8 md:p-0 text-white">
+                
+                {/* Quick-Stat Strip */}
+                <div className="mt-6 flex flex-wrap justify-center md:justify-start gap-3 text-sm md:text-base text-gray-800 dark:text-gray-300 font-semibold px-4 md:px-0">
+                    <span className="bg-gray-200 dark:bg-gray-800 px-3 py-1 rounded-full">8+ Projects</span>
+                    <span className="bg-gray-200 dark:bg-gray-800 px-3 py-1 rounded-full">4th Year Student</span>
+                    <span className="bg-gray-200 dark:bg-gray-800 px-3 py-1 rounded-full">AI & Data Science</span>
+                </div>
+
+                <p className="mt-8 lg:text-xl px-8 md:p-0 text-gray-800 dark:text-white max-w-2xl">
                     An AI & Data Science engineer building smart, impactful, and scalable machine learning solutions.
                 </p>
-                <Link
-                    to="/projects"
-                    className="mt-8 md:ml-[4px] inline-block px-6 py-3 font-semibold bg-black bg-opacity-50 dark:bg-white dark:opacity-50 dark:text-black hover:bg-opacity-70 hover:dark:opacity-70 text-white rounded-lg"
-                >
-                    View My Work
-                </Link>
+                
+                <div className="mt-10 flex flex-wrap justify-center md:justify-start gap-4">
+                    <Link
+                        to="/projects"
+                        className="inline-block px-8 py-3 font-semibold bg-red-700 text-white hover:bg-red-800 rounded-lg shadow-lg"
+                    >
+                        View My Work
+                    </Link>
+                    <a
+                        href="/prajwal.pdf"
+                        target="_blank"
+                        className="inline-block px-8 py-3 font-semibold bg-transparent border-2 border-red-700 text-red-700 hover:bg-red-700 hover:text-white rounded-lg transition-colors"
+                    >
+                        Download Resume
+                    </a>
+                </div>
             </motion.div>
 
             {/* Right Image */}

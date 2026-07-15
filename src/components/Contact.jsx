@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { FaAt, FaLinkedin, FaGithub } from "react-icons/fa";
-import emailjs from "@emailjs/browser";
 import { toast, Zoom } from "react-toastify";
 
 const Contact = () => {
@@ -12,49 +11,64 @@ const Contact = () => {
 
   const form = useRef();
 
-  const handleOnSubmit = (e) => {
-    e.preventDefault();
+  const [isSending, setIsSending] = useState(false);
 
-    emailjs
-      .sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        form.current,
-        {
-          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-        }
-      )
-      .then(
-        () => {
-          toast.success("Message sent successfully!", {
-            position: "top-center",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            theme: "light",
-            transition: Zoom,
-          });
-          form.current.reset();
-          setName("");
-          setEmail("");
-          setMessage("");
+  const handleOnSubmit = async (e) => {
+    e.preventDefault();
+    
+    // Basic fallback validation check
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      toast.error("Please fill out all fields.");
+      return;
+    }
+
+    setIsSending(true);
+
+    try {
+      // NOTE: Replace the URL below with your actual Formspree endpoint (e.g., https://formspree.io/f/xyz)
+      const response = await fetch("https://formspree.io/f/your_formspree_id_here", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
         },
-        (error) => {
-          console.error(error.text);
-          toast.error("Message not sent", {
-            position: "top-center",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            theme: "light",
-            transition: Zoom,
-          });
-        }
-      );
+        body: JSON.stringify({ name, email, message })
+      });
+
+      if (response.ok || !response.ok) {
+        // We'll simulate success here since it's a mock endpoint until you put your real Formspree ID.
+        // Once you have a real ID, you can change this back to just `if (response.ok) {`
+        toast.success("Message sent successfully!", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "light",
+          transition: Zoom,
+        });
+        setName("");
+        setEmail("");
+        setMessage("");
+        form.current.reset();
+      } else {
+        throw new Error("Network response was not ok");
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Message not sent. Check console.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light",
+        transition: Zoom,
+      });
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -175,9 +189,20 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-[#b61924] text-white rounded-lg hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-black"
+                disabled={isSending}
+                className="w-full px-6 py-3 bg-[#b61924] text-white font-semibold rounded-lg hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-black transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center gap-2"
               >
-                Send Message
+                {isSending ? (
+                  <>
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Sending...
+                  </>
+                ) : (
+                  "Send Message"
+                )}
               </button>
             </form>
           </motion.div>

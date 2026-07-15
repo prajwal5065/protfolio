@@ -7,6 +7,18 @@ import Loader from './components/Loader';
 import ErrorPage from './components/ErrorPage';
 import { ToastContainer, Zoom } from 'react-toastify';
 import useTheme from "./hooks/useTheme";
+import { AnimatePresence, motion } from 'framer-motion';
+
+const PageWrapper = ({ children }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -20 }}
+    transition={{ duration: 0.3 }}
+  >
+    {children}
+  </motion.div>
+);
 
 // Lazy loading components
 const Home = lazy(() => import('./components/Home'));
@@ -28,15 +40,17 @@ function App() {
     <div>
       <Suspense fallback={<Loader />}>
         {!hideLayout && <Navbar theme={theme} toggleTheme={toggleTheme}/>}
-        <main>
-          <Routes>
-            <Route path="/" element={<Home theme={theme}/>} />
-            <Route path="/about" element={<About />} />
-            <Route path="/skills" element={<Skill />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<ErrorPage />} />
-          </Routes>
+          <main>
+          <AnimatePresence mode="wait">
+            <Routes location={path} key={path.pathname}>
+              <Route path="/" element={<PageWrapper><Home theme={theme}/></PageWrapper>} />
+              <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
+              <Route path="/skills" element={<PageWrapper><Skill /></PageWrapper>} />
+              <Route path="/projects" element={<PageWrapper><Projects /></PageWrapper>} />
+              <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
+              <Route path="*" element={<PageWrapper><ErrorPage /></PageWrapper>} />
+            </Routes>
+          </AnimatePresence>
         </main>
         {!hideLayout && <Footer />}
       </Suspense>
