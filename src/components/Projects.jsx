@@ -66,7 +66,7 @@ const projects = [
     badge: "Backend Project",
     category: "AI & ML",
     links: {
-      live: "https://github.com/Yad4o/SRS",
+      live: "https://srs-frontend-rho.vercel.app/#",
       github: "https://github.com/Yad4o/SRS",
     },
   },
